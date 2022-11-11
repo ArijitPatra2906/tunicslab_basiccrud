@@ -98,3 +98,39 @@ form div {
     cursor: pointer;
     margin-left: 160px;
 }
+
+@media screen and (max-width:700px) {
+    .modal_main {
+        position: absolute;
+        top: 40%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+        width: 280px;
+        height: 330px;
+        background-color: #D9D9D9;
+        border: none;
+        /* box-shadow: 24px; */
+        /* padding: 20px 20px; */
+        border-radius: 6px;
+    }
+
+    form label {
+        width: 160px;
+    }
+
+    form input {
+        width: 200px;
+    }
+
+    .submit {
+        margin-left: 100px;
+    }
+
+    .modal_icon {
+        color: black;
+        cursor: pointer;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}

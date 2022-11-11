@@ -92,3 +92,11 @@
 .cardUsers svg {
     color: #FFFFFF;
 }
+
+@media screen and (max-width:700px) {
+    .dashMain {
+        display: flex;
+        flex-direction: column;
+
+    }
+}

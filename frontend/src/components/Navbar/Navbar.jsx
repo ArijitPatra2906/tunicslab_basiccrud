@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import "./Navbar.css"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import QuizIcon from '@mui/icons-material/Quiz';
-import PostAddIcon from '@mui/icons-material/PostAdd';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
-import { Link, useNavigate } from "react-router-dom"
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import DisplaySettingsOutlinedIcon from '@mui/icons-material/DisplaySettingsOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
@@ -17,13 +17,6 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [bar, setBar] = useState(true)
     const [close, setClose] = useState(false)
-
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        localStorage.removeItem("userInfo")
-        navigate("/")
-    };
 
     return (
         <div className='navbar'>
@@ -42,40 +35,33 @@ function Navbar() {
             <div div className="Navbar" >
                 <div className={`nav-items ${isOpen && "open"}`}>
                     <ul>
-                        <Link to="/dashboard" style={{ textDecoration: "none" }}>
-                            <li>
-                                <DashboardIcon className="icon" />
-                                <span>Dashboard</span>
-                            </li>
-                        </Link>
-                        <Link to="/contact" style={{ textDecoration: "none" }}>
-                            <li>
-                                <ContactPageIcon className="icon" />
-                                <span>Contact</span>
-                            </li>
-                        </Link>
-                        <Link to="/courseinfo" style={{ textDecoration: "none" }}>
-                            <li>
-                                <CreditCardIcon className="icon" />
-                                <span>Course Queries</span>
-                            </li>
-                        </Link>
-                        <Link to="/blog" style={{ textDecoration: "none" }}>
-                            <li>
-                                <PostAddIcon className="icon" />
-                                <span>Blog</span>
-                            </li>
-                        </Link>
-                        <Link to="/faq" style={{ textDecoration: "none" }}>
-                            <li>
-                                <QuizIcon className="icon" />
-                                <span>Faq</span>
-                            </li>
-                        </Link>
-                        <p className="title">USER</p>
-                        <li onClick={handleLogout}>
-                            <ExitToAppIcon className="icon" />
-                            <span>Logout</span>
+                        <li>
+                            <HomeOutlinedIcon />
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <BookmarkBorderOutlinedIcon />
+                            <a href="/">Course</a>
+                        </li>
+                        <li>
+                            <SchoolOutlinedIcon />
+                            <a href="/student">Student</a>
+                        </li>
+                        <li>
+                            <LocalAtmOutlinedIcon />
+                            <a href="/">Payment</a>
+                        </li>
+                        <li>
+                            <DescriptionOutlinedIcon />
+                            <a href="/">Report</a>
+                        </li>
+                        <li>
+                            <DisplaySettingsOutlinedIcon />
+                            <a href="/">Settings</a>
+                        </li>
+                        <li>
+                            <a href='/'>Logout</a>
+                            <LogoutOutlinedIcon />
                         </li>
                     </ul>
 
