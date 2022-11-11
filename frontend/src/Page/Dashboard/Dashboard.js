@@ -11,43 +11,27 @@ import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 function Dashboard() {
 
-    const [totalCourse, setTotalCourse] = useState("");
-    const [totalContact, setTotalContact] = useState("");
-    const [totalBlogs, setTotalBlogs] = useState("");
-    const [totalFaq, setTotalFaq] = useState("");
+    const [totalStudent, setTotalStudent] = useState("");
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
 
-    useEffect(() => {
-        if (!localStorage.getItem("userInfo"))
-            navigate("/")
-    }, [navigate])
     useEffect(() => {
         const getAllCardData = async () => {
             setLoading(true);
-            const result = await axios.get("https://jeevmokshayogaadminportal.herokuapp.com/api/booking/count");
-            const result2 = await axios.get("https://jeevmokshayogaadminportal.herokuapp.com/api/contact/count");
-            const result3 = await axios.get("https://jeevmokshayogaadminportal.herokuapp.com/api/blogs/count");
-            const result4 = await axios.get("https://jeevmokshayogaadminportal.herokuapp.com/api/faq/count");
-            setTotalCourse(result.data)
-            setTotalContact(result2.data)
-            setTotalBlogs(result3.data)
-            setTotalFaq(result4.data)
+            const result = await axios.get("http://localhost:8000/student/count");
+            setTotalStudent(result.data)
             setLoading(false);
-            console.log(totalCourse)
-            console.log(totalContact)
-            console.log(totalBlogs)
-            console.log(totalFaq)
+            // console.log(totalStudent)
+
         };
         getAllCardData()
-    }, [totalBlogs, totalContact, totalCourse, totalFaq])
+    }, [totalStudent])
 
     return (
         <Box sx={{ flexGrow: 1, }}>
             <Grid container spacing={3}>
                 <Grid className='dashboard_container' item xs={12}>
                     {loading === true ? (<div style={{ marginTop: "50px" }}>
-                        <CircularProgress size={70} color="inherit" />
+                        <CircularProgress size={70} color="warning" />
                     </div>) : (
                         <Box className="dashMain">
                             <div className='card cardStudent'>
@@ -57,28 +41,28 @@ function Dashboard() {
                                         <p>Students</p>
                                     </Link>
                                 </div>
-                                <p className='count'>{totalCourse}</p>
+                                <p className='count'>{totalStudent}</p>
                             </div>
                             <div className='card cardCourse'>
                                 <div className='content'>
                                     <BookmarkBorderOutlinedIcon />
                                     <p>Course</p>
                                 </div>
-                                <p className='count'>{totalCourse}</p>
+                                <p className='count'>13</p>
                             </div>
                             <div className='card cardPayments'>
                                 <div className='content'>
                                     <LocalAtmOutlinedIcon />
                                     <p>Payments</p>
                                 </div>
-                                <p className='count'>{totalCourse}</p>
+                                <p className='count'>INR 556,000</p>
                             </div>
                             <div className='card cardUsers'>
                                 <div className='content'>
                                     <Person2OutlinedIcon />
                                     <p>Users</p>
                                 </div>
-                                <p className='count'>{totalCourse}</p>
+                                <p className='count'>3</p>
                             </div>
                         </Box>
                     )}
