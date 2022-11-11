@@ -1,0 +1,9 @@
+.student,
+.dashboard {
+    display: flex;
+}
+
+.studentContainer,
+.dashboardContainer {
+    flex: 6;
+}

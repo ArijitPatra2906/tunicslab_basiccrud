@@ -1,0 +1,95 @@
+.sidebar {
+    flex: 1;
+    border-right: 0.5px solid rgb(230, 227, 227);
+    height: 100vh;
+    background-color: #F2EAE1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+.sidebar-top img {
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-title {
+    font-size: 18px;
+}
+
+.sidebar-title::before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    background-color: #F8D442;
+    position: absolute;
+    left: 7px;
+    top: 20px;
+}
+
+.sidebar-top h4 {
+    font-size: 16px;
+}
+
+.sidebar-top h6 {
+    margin-top: -16px;
+    color: #FEAF00;
+    font-size: 14px;
+}
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    text-align: left;
+    gap: 14px;
+}
+
+.sidebar ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 70px;
+}
+
+.sidebar ul li svg {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.logout {
+    margin-top: 90px;
+}
+
+@media screen and (max-width:1024px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .sidebar {
+        display: none;
+    }
+}

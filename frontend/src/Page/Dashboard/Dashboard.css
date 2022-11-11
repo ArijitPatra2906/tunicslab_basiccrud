@@ -1,0 +1,94 @@
+.dashboard_container {
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #e5e5e594;
+    height: 96vh;
+    /* margin-left: 20px; */
+}
+
+.dashMain {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    height: 160px;
+    width: 270px;
+    border: none;
+    border-radius: 8px;
+}
+
+.cardStudent {
+    background-color: #F0F9FF;
+    position: relative;
+}
+
+.cardCourse {
+    background-color: #FEF6FB;
+    position: relative;
+}
+
+.cardPayments {
+    background-color: #FEFBEC;
+    position: relative;
+}
+
+.cardUsers {
+    background: linear-gradient(110.42deg, #FEAF00 18.27%, #F8D442 91.84%);
+    position: relative;
+
+}
+
+.content p {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 20px;
+    font-size: 20px;
+    margin-top: 50px;
+    color: black;
+}
+
+.content svg {
+    position: absolute;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 20px;
+    font-size: 36px;
+}
+
+.count {
+    position: absolute;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cardStudent svg {
+    color: #74C1ED;
+}
+
+.cardCourse svg {
+    color: #EE95C5;
+}
+
+.cardPayments svg {
+    color: #F6C762;
+}
+
+.cardUsers svg {
+    color: #FFFFFF;
+}
