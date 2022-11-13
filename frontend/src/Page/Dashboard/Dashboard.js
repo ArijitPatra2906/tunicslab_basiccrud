@@ -17,7 +17,7 @@ function Dashboard() {
     useEffect(() => {
         const getAllCardData = async () => {
             setLoading(true);
-            const result = await axios.get("http://localhost:8000/student/count");
+            const result = await axios.get("https://tunicslab.herokuapp.com/student/count");
             setTotalStudent(result.data)
             setLoading(false);
             // console.log(totalStudent)

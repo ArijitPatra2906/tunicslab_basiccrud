@@ -22,7 +22,7 @@ function StudentModel({ open, handleClose, }) {
                 }
             };
             const { data } = await axios.post(
-                "http://localhost:8000/student",
+                "https://tunicslab.herokuapp.com/student",
                 { name, email, phone, enrollNo, date },
                 config
             );

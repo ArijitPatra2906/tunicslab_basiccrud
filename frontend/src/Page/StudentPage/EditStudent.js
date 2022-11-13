@@ -19,7 +19,7 @@ function EditStudent() {
 
     const handleUpdate = async () => {
         try {
-            await axios.put("http://localhost:8000/student/" + path, {
+            await axios.put("https://tunicslab.herokuapp.com/student/" + path, {
                 name,
                 email,
                 phone,

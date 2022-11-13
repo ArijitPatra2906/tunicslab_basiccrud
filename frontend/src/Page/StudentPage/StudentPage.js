@@ -21,7 +21,7 @@ function StudentPage() {
 
     const getStudent = async () => {
         setLoading(true);
-        const result = await axios.get("http://localhost:8000/student");
+        const result = await axios.get("https://tunicslab.herokuapp.com/student");
         setStudent(result.data)
         setLoading(false);
         // console.log(result.data)
@@ -31,7 +31,7 @@ function StudentPage() {
     }, [])
 
     const deleteUser = async id => {
-        await axios.delete(`http://localhost:8000/student/${id}`)
+        await axios.delete(`https://tunicslab.herokuapp.com/student/${id}`)
         getStudent();
     }
 
