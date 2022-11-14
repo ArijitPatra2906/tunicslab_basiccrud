@@ -1,9 +1,9 @@
-import { Box, Card, CardContent, CircularProgress, Grid, Typography } from '@mui/material'
+import { Box, CircularProgress, Grid, } from '@mui/material'
 import axios from 'axios';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import "./Dashboard.css"
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';

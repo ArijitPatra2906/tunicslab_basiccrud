@@ -1,5 +1,5 @@
-import { Box, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import { Box, TextField, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
@@ -14,8 +14,19 @@ function EditStudent() {
     const [date, setDate] = useState("")
 
     const location = useLocation();
-    const navigate = useNavigate();
     const path = location.pathname.split("/")[2];
+
+    const getStudent = async () => {
+        const result = await axios.get("https://tunicslab.herokuapp.com/student/" + path);
+        setName(result.data.name);
+        setEmail(result.data.email);
+        setPhone(result.data.phone);
+        setEnrollNo(result.data.enrollNo)
+        setDate(result.data.date)
+    };
+    useEffect(() => {
+        getStudent()
+    }, [])
 
     const handleUpdate = async () => {
         try {
@@ -26,7 +37,7 @@ function EditStudent() {
                 enrollNo,
                 date
             });
-            navigate("/student")
+            window.location.replace("/student")
         } catch (err) {
             console.log(err)
         }

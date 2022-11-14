@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import CloseIcon from '@mui/icons-material/Close';
-import { Box, Button, Modal, TextField, Typography } from '@mui/material';
+import React, { useState } from 'react'
+import { Box, Modal, Typography } from '@mui/material';
 import "./StudentPage.css"
 import axios from 'axios';
 
@@ -27,6 +26,7 @@ function StudentModel({ open, handleClose, }) {
                 config
             );
             console.log(data);
+            alert("Student created successfully")
             window.location.reload()
 
 
